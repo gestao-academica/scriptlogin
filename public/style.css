@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+/* ===================== RESET ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* remove barra de rolagem */
+}
+
+/* ===================== BODY ===================== */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===================== LADO ESQUERDO ===================== */
+.left {
+    flex: 1;
+    background: linear-gradient(180deg, #0b1c66, #163a8c);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem; /* menor padding para caber na tela */
+    position: relative;
+}
+
+.left h1 {
+    font-size: 60px; /* ajustado */
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.left p {
+    font-size: 20px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.left img {
+    max-width: 90%; /* ajusta imagem para não ultrapassar */
+    height: auto;
+    align-self: flex-end;
+    margin-top: 1rem;
+    margin-right: 4rem;
+}
+
+/* ===================== LADO DIREITO ===================== */
+.right {
+    flex: 1;
+    background: #f9fbff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* ===================== FORM BOX ===================== */
+.form-box {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-box h2 {
+    font-size: 40px;
+    color: #0b1c66;
+    margin-top: 40px;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.input-box {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 16px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #cfd8dc;
+    outline: none;
+    font-size: 16px;
+    background: #e9f0f2;
+}
+
+/* Esqueceu a senha */
+.forgot {
+    position: absolute;
+    right: 10px;
+    bottom: -20px;
+}
+
+.forgot a {
+    font-size: 14px;
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+/* Botão */
+.btn {
+    width: 40%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #4a90e2;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 2rem auto 1rem auto;
+    display: block;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #357abd;
+}
+
+/* Rodapé do form */
+.form-footer {
+    margin-top: 1rem;
+    font-size: 14px;
+    text-align: center;
+    color: #4a90e2;
+}
+
+.form-footer a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Mensagens de erro */
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* ===================== CÍRCULOS DE FUNDO ===================== */
+:root{
+    --circle-size: 300px;         
+    --circle-x: 5%;             
+    --circle-y: 15%;             
+    --blur-amount: 40px;         
+    --opacity: 0.36;             
+    --color-1: rgb(215, 252, 241);
+    --color-2: rgb(28, 125, 216);
+    --color-3: rgba(30,200,180,0.9);
+}
+
+.bg-circle-wrapper{
+    position: absolute;      
+    inset: 0;                
+    pointer-events: none;    
+    overflow: hidden;        
+    z-index: 0;              
+}
+
+.bg-circle{
+    position: absolute;
+    left: var(--circle-x);
+    top: var(--circle-y);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: 50%;
+    opacity: var(--opacity);
+    filter: blur(var(--blur-amount));
+    background: radial-gradient(
+        circle at 30% 30%,
+        var(--color-1) 0%,
+        color-mix(in srgb, var(--color-1) 40%, transparent 10%) 25%,
+        var(--color-2) 45%,
+        color-mix(in srgb, var(--color-2) 55%, transparent 10%) 60%,
+        var(--color-3) 100%
+    );
+    mix-blend-mode: screen;
+    will-change: transform, filter, opacity;
+    transition: opacity .45s ease, transform .45s ease;
+}
+
+.bg-circle-wrapper .bg-circle.alt {
+    --circle-size: 250px;
+    --circle-x: 15%;
+    --circle-y: 80%;
+    --blur-amount: 60px;
+    --opacity: 0.24;
+    background: radial-gradient(
+        circle at 60% 40%,
+        rgb(90, 189, 255) 0%,
+        rgba(59, 169, 243, 0.6) 40%,
+        rgba(74, 13, 155, 0.6) 100%
+    );
+}

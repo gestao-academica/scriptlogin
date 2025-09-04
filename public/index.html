@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AcadSys</title>
+</head>
+<body>
+    <!-- Lado esquerdo -->
+    <div class="left">
+        <h1>AcadSys</h1>
+        <p>Genrecie seu futuro aqui!</p>
+        <img src="imagens/unnamed.png" alt="Imagem estudante">
+    </div>
+    
+    <!-- Círculos de fundo -->
+    <div class="bg-circle-wrapper">
+        <div class="bg-circle"></div>
+    </div>
+
+    <!-- Lado direito -->
+    <div class="right">
+        <div class="form-box">
+            <!-- Login -->
+            <div id="login-form">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" placeholder="Digite seu e-mail">
+                </div>
+                <div class="input-box">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" placeholder="Digite sua senha">
+                    <p class="forgot"><a href="#">Esqueceu a senha?</a></p>
+                </div>
+                <button class="btn" id="login-btn">Entrar</button>
+                <div class="form-footer">
+                    <p>Novo por aqui? <a onclick="showRegister()">Faça seu cadastro!</a></p>
+                </div>
+            </div>
+
+            <!-- Cadastro -->
+            <div id="register-form" style="display:none;">
+                <h2>Cadastro</h2>
+                <div class="input-box">
+                    <label for="register-name">Nome</label>
+                    <input type="text" id="register-name" placeholder="Digite seu nome completo">
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                <div class="input-box">
+                    <label for="register-cpf">CPF</label>
+                    <input type="text" id="register-cpf" placeholder="Digite seu CPF">
+                    <span class="error-message" id="cpf-error"></span>
+                </div>
+                <div class="input-box">
+                    <label for="register-email">E-mail</label>
+                    <input type="email" id="register-email" placeholder="Digite seu e-mail">
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="input-box">
+                    <label for="register-password">Senha</label>
+                    <input type="password" id="register-password" placeholder="Crie uma senha">
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <button class="btn" id="register-btn">Cadastrar</button>
+                <div class="form-footer">
+                    <p>Já possui conta? <a onclick="showLogin()">Faça login!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
